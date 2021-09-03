@@ -5,7 +5,8 @@
 @section('content')
     <div class="card container">
         <div class="card-header">
-            <p class="card-header-title">Liste Clients</p>
+            <h3 class="text-center">Liste Clients</h3>
+            <button class="btn btn-dark"><a class="button is-primary" href="{{ route('clients.create') }}">Ajouter un nouveau client</a></button>
         </div>
         <div class="card-body">
             <div class="content">

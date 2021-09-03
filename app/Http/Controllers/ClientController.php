@@ -38,6 +38,16 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nom'=>'required',
+            'prenom'=>'required',
+            'dateNaissance'=>'required',
+            'adresse'=>'required',
+            'tel'=>'required | regex:/^([0-9\s\-\+\(\)]*)$/|min:8',
+        ]);
+
+        Client::create($request->all());
+        return redirect()->route('clients.create')->with('success','Client créé avec succès.');
         //
     }
 
